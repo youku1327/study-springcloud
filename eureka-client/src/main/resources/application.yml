@@ -1,0 +1,12 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: eureka-client # 应用名称
+
+eureka:
+  client:
+    service-url:
+      # 服务注册地址
+      defaultZone: http://localhost:10086/eureka/
