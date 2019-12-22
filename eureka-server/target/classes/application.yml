@@ -1,12 +1,41 @@
+spring:
+  application:
+    name: eureka-server-cluster
+---
+spring:
+  profiles: peer1
 server:
-  port: 10086
-
+  port: 10081
 eureka:
   instance:
-    hostname: localhost
+    hostname: peer1
   client:
-    # 作为server，表示禁止向自己注册
-    register-with-eureka: false
-    fetch-registry: false
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      # 向peer2 peer3节点注册自己
+      defaultZone: http://peer2:10082/eureka,http://peer3:10083/eureka
+
+---
+spring:
+  profiles: peer2
+server:
+  port: 10082
+eureka:
+  instance:
+    hostname: peer2
+  client:
+    service-url:
+      # 向peer1 pee3节点注册自己
+      defaultZone: http://peer1:10081/eureka,http://peer3:10083/eureka
+
+---
+spring:
+  profiles: peer3
+server:
+  port: 10083
+eureka:
+  instance:
+    hostname: peer3
+  client:
+    service-url:
+      # 向peer1 peer2节点注册自己
+      defaultZone: http://peer1:10081/eureka,http://peer2:10082/eureka
