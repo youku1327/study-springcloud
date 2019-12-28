@@ -5,14 +5,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @Author lsc
- * <p> 知识追寻者，ribbon provider the restful api</p>
+ * <p> 知识追寻者 Feign 服务消费</p>
  */
 @RestController
-public class RibbonProvidderController {
+public class FeignProvoderController {
 
-
-    @GetMapping("zszxz/ribbon")
-    public String testRibbon(){
-        return "hello i am zszxz";
+    @GetMapping("zszxz/feign")
+    public String getFeign(){
+        return "the get method of feign test";
     }
 }
