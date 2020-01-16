@@ -1,9 +1,9 @@
 server:
-  port: 8090
+  port: 8097
 
 spring:
   application:
-    name: eureka-client # 应用名称
+    name: turbine-monitor # 应用名称
 
 eureka:
   client:
@@ -12,3 +12,6 @@ eureka:
       defaultZone: http://peer1:10081/eureka/,http://peer2:10082/eureka/,http://peer3:10083/eureka/
 
 
+turbine:
+  appConfig: hystrix-feign,hystrix-feign2
+  clusterNameExpression: "'default'"

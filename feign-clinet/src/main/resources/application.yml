@@ -11,14 +11,35 @@ eureka:
       # 服务注册地址
       defaultZone: http://peer1:10081/eureka/,http://peer2:10082/eureka/,http://peer3:10083/eureka/
 
-feign:
-  client:
-    config:
-      default:
-        connectTimeout: 5000 # 连接超时时间
-        readTimeout: 5000   # 读超时时间
-        loggerLevel: full # 日志级别
+
+#feign:
+  #client:
+    #config:
+      #default:
+        #connectTimeout: 5000 # 连接超时时间
+        #readTimeout: 5000   # 读超时时间
+        #loggerLevel: full # 日志级别
 
 logging:
   level:
     com.zszxz.feign.service: Debug
+
+feign:
+  # 开启okhttp
+  okhttp:
+    enabled: true
+  # 开启 hystrix
+  hystrix:
+    enabled: true
+# 熔断机制
+hystrix:
+  shareSecurityContext: true
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMillisecond: 10000
+      circuitBreaker:
+        sleepWindowInMilliseconds: 50000
+        forceClosed: true

@@ -13,6 +13,11 @@
         <module>eureka-client</module>
         <module>ribbon-client</module>
         <module>feign-clinet</module>
+        <module>hystrix-client</module>
+        <module>feign-hystrix</module>
+        <module>hystrix-dashboard</module>
+        <module>turbine-monitor</module>
+        <module>hystrix-dash2</module>
     </modules>
 
     <parent>
