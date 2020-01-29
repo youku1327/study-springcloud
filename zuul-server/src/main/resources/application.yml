@@ -1,0 +1,39 @@
+server:
+  port: 8100
+
+spring:
+  application:
+    name: zuul-server # 应用名称
+
+eureka:
+  client:
+    service-url:
+      # 服务注册地址
+      defaultZone: http://peer1:10081/eureka/,http://peer2:10082/eureka/,http://peer3:10083/eureka/
+  instance:
+    prefer-ip-address: true
+
+
+zuul:
+  routes:
+    zuul-client:
+      path: /api/**
+      serviceId: zuul-client
+      stripPrefix: true
+
+hystrix:
+  command:
+    zuul-client:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+
+zuul-client:
+  ribbon:
+    NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList
+    listOfServers: http://127.0.0.1:8101,http://127.0.0.1:8102
+    ConnectTimeout: 1000
+    ReadTimeout: 3000
+    MaxTotalHttpConnections: 500
+    MaxConnectionsPerHost: 100

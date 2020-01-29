@@ -17,7 +17,9 @@
         <module>feign-hystrix</module>
         <module>hystrix-dashboard</module>
         <module>turbine-monitor</module>
-        <module>hystrix-dash2</module>
+        <module>feign-hystrix2</module>
+        <module>zuul-client</module>
+        <module>zuul-server</module>
     </modules>
 
     <parent>
