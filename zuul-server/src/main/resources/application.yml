@@ -4,7 +4,13 @@ server:
 spring:
   application:
     name: zuul-server # 应用名称
+  servlet:
+    multipart:
+      max-file-size: 200MB #单个文件上传大小
+      max-request-size: 600MB #连续上传文件大小
+      location: / #临时目录
 
+# 服务注册与发现
 eureka:
   client:
     service-url:
@@ -13,27 +19,30 @@ eureka:
   instance:
     prefer-ip-address: true
 
-
+# 路由转发
 zuul:
   routes:
     zuul-client:
       path: /api/**
       serviceId: zuul-client
-      stripPrefix: true
 
+# hystrix 超时设置
 hystrix:
   command:
-    zuul-client:
+    default:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 10000
+            timeoutInMilliseconds: 60000
+# ribbon 超时设置
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 60000
 
-zuul-client:
-  ribbon:
-    NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList
-    listOfServers: http://127.0.0.1:8101,http://127.0.0.1:8102
-    ConnectTimeout: 1000
-    ReadTimeout: 3000
-    MaxTotalHttpConnections: 500
-    MaxConnectionsPerHost: 100
+# 端点管理
+management:
+  endpoints:
+    web:
+      exposure:
+        include: routes,filters
+

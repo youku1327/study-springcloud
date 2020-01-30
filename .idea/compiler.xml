@@ -6,16 +6,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ribbon-client" />
         <module name="eureka-server" />
         <module name="eureka-client" />
-        <module name="hystrix-client" />
+        <module name="feign-hystrix2" />
         <module name="hystrix-dashboard" />
         <module name="zuul-client" />
-        <module name="turbine-monitor" />
-        <module name="feign-hystrix" />
         <module name="feign-clinet" />
-        <module name="feign-hystrix2" />
+        <module name="hystrix-client" />
+        <module name="feign-hystrix" />
+        <module name="turbine-monitor" />
+        <module name="ribbon-client" />
         <module name="zuul-server" />
       </profile>
     </annotationProcessing>
