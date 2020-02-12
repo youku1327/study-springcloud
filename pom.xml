@@ -20,6 +20,8 @@
         <module>feign-hystrix2</module>
         <module>zuul-client</module>
         <module>zuul-server</module>
+        <module>config-server</module>
+        <module>config-client</module>
     </modules>
 
     <parent>

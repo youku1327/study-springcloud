@@ -1,0 +1,13 @@
+
+# cloud属性相关配置
+spring:
+  cloud:
+    config:
+      # 远程分支
+      label: master
+      # server地址
+      uri: http://localhost:9000
+      # 请求的远程文件名称
+      name: zszxz-config
+      # 激活的配置文件
+      profile: dev

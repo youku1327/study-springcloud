@@ -1,0 +1,26 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          # git 服务器地址
+          uri: https://github.com/zszxz/spring-cloud-config.git
+          # git仓库 账号
+          username: zszxz
+          # git仓库 密码
+          password:
+          # 搜索zszxz-config目录下的所有配置
+          search-paths: zszxz-config
+  application:
+    name: zszxz-config # 应用名称
+  ## 配置rabbitMQ 信息
+  rabbitmq:
+    host:
+    port: 5672
+    username: zszxz
+    password:
+server:
+  port: 9000 # 暴露端口
+
+
+
