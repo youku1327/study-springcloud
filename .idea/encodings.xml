@@ -14,6 +14,11 @@
     <file url="file://$PROJECT_DIR$/ribbon-client" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/turbine-monitor" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/zuul-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zuul-oauth" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zuul-oauth/oauth-eureka-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zuul-oauth/oauth-eureka-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zuul-oauth/oauth-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zuul-oauth/oauth-zuul-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/zuul-server" charset="UTF-8" />
   </component>
 </project>

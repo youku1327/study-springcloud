@@ -6,19 +6,23 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="turbine-monitor" />
         <module name="eureka-server" />
-        <module name="eureka-client" />
         <module name="config-server" />
-        <module name="feign-hystrix2" />
-        <module name="hystrix-dashboard" />
-        <module name="zuul-client" />
-        <module name="hystrix-client" />
         <module name="config-client" />
         <module name="feign-hystrix" />
-        <module name="feign-clinet" />
+        <module name="oauth-server" />
         <module name="ribbon-client" />
+        <module name="feign-clinet" />
+        <module name="eureka-client" />
+        <module name="zuul-client" />
+        <module name="oauth-eureka-server" />
+        <module name="feign-hystrix2" />
+        <module name="oauth-eureka-client" />
         <module name="zuul-server" />
+        <module name="hystrix-dashboard" />
+        <module name="hystrix-client" />
+        <module name="turbine-monitor" />
+        <module name="oauth-zuul-server" />
       </profile>
     </annotationProcessing>
   </component>
@@ -33,10 +37,15 @@
       <module name="feign-hystrix2" options="-parameters" />
       <module name="hystrix-client" options="-parameters" />
       <module name="hystrix-dashboard" options="-parameters" />
+      <module name="oauth-eureka-client" options="-parameters" />
+      <module name="oauth-eureka-server" options="-parameters" />
+      <module name="oauth-server" options="-parameters" />
+      <module name="oauth-zuul-server" options="-parameters" />
       <module name="ribbon-client" options="-parameters" />
       <module name="study-springcloud" options="-parameters" />
       <module name="turbine-monitor" options="-parameters" />
       <module name="zuul-client" options="-parameters" />
+      <module name="zuul-oauth" options="-parameters" />
       <module name="zuul-server" options="-parameters" />
     </option>
   </component>
